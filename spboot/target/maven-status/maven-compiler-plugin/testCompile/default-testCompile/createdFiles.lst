@@ -1,0 +1,4 @@
+com\revise\spboot\service\DepartmentServiceTest.class
+com\revise\spboot\repository\DepartmentRepositoryTest.class
+com\revise\spboot\SpbootApplicationTests.class
+com\revise\spboot\controller\DepartmentControllerTest.class

@@ -1,0 +1,56 @@
+server:
+  port: 8082
+
+spring:
+  profiles:
+    active: dev
+
+http:
+  mappers:
+    jsonPrettyPrint: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/depo
+    password: arc123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+---
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/depo-qa
+    password: arc123
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: 'true'
+
+---
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/depo-prod
+    password: arc123
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: 'true'
+
+---
