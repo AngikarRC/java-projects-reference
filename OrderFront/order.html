@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+    <h1>Order Table</h1>
+    <table>
+        <thead>
+            <th>Item</th>
+            <th> <button onclick="sortByPrice()">Price</button></th>
+            <th> <button onclick="sortByPinCode()">PinCode</button></th>
+            <th><button onclick="deleteOrder()">Delete</button></th>
+        </thead>
+        <tbody id="orders">
+        </tbody>
+    </table>
+    
+</body>
+<script src='order.js'></script>
+
+</html>
