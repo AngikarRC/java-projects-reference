@@ -1,4 +1,5 @@
 package com.loose.coupling;
 
-public class UserDatabaseProvider {
+public interface UserDatabaseProvider {
+     String getUserDetailsDB();
 }
