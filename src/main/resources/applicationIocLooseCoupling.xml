@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- bean definitions here -->
+    <bean id="webservice" class="com.ioc.coupling.WebServiceData"/>
+    <bean id="mysql" class="com.ioc.coupling.MySqlDB"/>
+    <bean id="nosql" class="com.ioc.coupling.NewDatabaseService"/>
+    <bean id="UserManagerWithMySQL" class="com.ioc.coupling.UserManager">
+        <constructor-arg ref="mysql" />
+    </bean>
+    <bean id="UserManagerWithNoSQL" class="com.ioc.coupling.UserManager">
+        <constructor-arg ref="nosql" />
+    </bean>
+    <bean id="UserManagerWithMyWeb" class="com.ioc.coupling.UserManager">
+        <constructor-arg ref="webservice" />
+    </bean>
+
+</beans>
